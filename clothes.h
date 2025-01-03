@@ -23,12 +23,12 @@ class Clothes {
         std::string getAoc();
         std::string getStatus();
     // Setters
-        int setId(int c_id);
-        std::string setBrand(std::string c_brand);
-        std::string setColor(std::string c_color);
-        std::string setClothing(std::string c_clothing);
-        std::string setAoc(std::string c_aoc);
-        std::string setStatus(std::string c_status);
+        void setId(int c_id);
+        void setBrand(std::string c_brand);
+        void setColor(std::string c_color);
+        void setClothing(std::string c_clothing);
+        void setAoc(std::string c_aoc);
+        void setStatus(std::string c_status);
     // Displays Cloth
         void display();
 };

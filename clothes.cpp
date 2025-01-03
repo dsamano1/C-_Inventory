@@ -36,22 +36,22 @@
     }
     ////////////////////////////////////////////////////////////////
 // Setters
-    int Clothes::setId(int c_id){
+    void Clothes::setId(int c_id){
         id = c_id;
     }
-    std::string Clothes::setBrand(std::string c_brand){
+    void Clothes::setBrand(std::string c_brand){
         brand = c_brand;
     }
-    std::string Clothes::setColor(std::string c_color){
+    void Clothes::setColor(std::string c_color){
         color = c_color;
     }
-    std::string Clothes::setClothing(std::string c_clothing){
+    void Clothes::setClothing(std::string c_clothing){
         clothing = c_clothing;
     }
-    std::string Clothes::setAoc(std::string c_aoc){
+    void Clothes::setAoc(std::string c_aoc){
         aoc = c_aoc;
     }
-    std::string Clothes::setStatus(std::string c_status){
+    void Clothes::setStatus(std::string c_status){
         status = c_status;
     }
     ///////////////////////////////////////////////////////////////
