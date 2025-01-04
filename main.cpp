@@ -6,6 +6,7 @@
 #include <iomanip>
 #include <windows.h>
 #include "clothes.h"
+#include "wCSV.h"
 
 int readCSV(const std::string& filename, std::vector<Clothes>& cVector){
     std::ifstream file(filename);
@@ -125,8 +126,11 @@ void Menu(std::vector<Clothes> cVector){
             std::cout << "You added: " << std::endl;
             new_item.display();
 
-            Sleep(500);
-            Menu(cVector);
+            bool pass = WtoFile("inventory.csv", new_item);
+            if (pass == true){
+                Sleep(500);
+                Menu(cVector);
+            }
             break;
         }
         default:

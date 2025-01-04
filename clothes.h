@@ -1,5 +1,5 @@
-#ifndef ITEM_H
-#define ITEM_H
+#ifndef CLOTHES_H
+#define CLOTHES_H
 #include <string>
 
 class Clothes {
@@ -31,5 +31,7 @@ class Clothes {
         void setStatus(std::string c_status);
     // Displays Cloth
         void display();
+    // To add string to CSV file
+        std::string add();
 };
 #endif

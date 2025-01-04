@@ -59,3 +59,7 @@
     void Clothes::display(){
         std::cout << std::setw(15) << id << std::setw(15) << brand << std::setw(15) << color << std::setw(15) << clothing << std::setw(15) << aoc << std::setw(15) << status << std::endl;
     }
+// creates to a single string used to write to CSV file
+    std::string Clothes::add(){
+        return std::to_string(id) + "," + brand + "," + color + "," + clothing + "," + aoc + "," + status;
+    }
