@@ -33,6 +33,7 @@ void Menu(std::vector<Clothes> cVector){
             for (Clothes item : cVector){ // prints each row
                 item.display();
             }
+            Menu(cVector);
             break;
         }   
         case 2:
