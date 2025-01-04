@@ -6,47 +6,8 @@
 #include <iomanip>
 #include <windows.h>
 #include "clothes.h"
-#include "wCSV.h"
-
-int readCSV(const std::string& filename, std::vector<Clothes>& cVector){
-    std::ifstream file(filename);
-
-    if (!file.is_open()){
-        std::cerr << "Failed opening file" << filename << std::endl;
-    }
-
-    std::string line;
-
-    std::getline(file, line); //skips first row 
-
-    while(std::getline(file, line)){
-        std::stringstream ss(line);
-
-        std::string id;
-        std::string brand;
-        std::string color;
-        std::string clothing;
-        std::string aoc;
-        std::string status;
-
-        // reads each column based on the comma
-        std::getline(ss, id, ',');
-        std::getline(ss, brand, ',');
-        std::getline(ss, color, ',');
-        std::getline(ss, clothing, ',');
-        std::getline(ss, aoc, ',');
-        std::getline(ss, status, ',');
-
-        int int_id = std::stoi(id); // Converts ID to an integer
-
-        Clothes item(int_id, brand, color, clothing, aoc, status); // creates the class from the data
-        cVector.push_back(item);
-    }
-    int current = cVector.size();
-    file.close();
-
-    return current;
-}
+#include "writeCSV.h"
+#include "readCSV.h"
 
 void Menu(std::vector<Clothes> cVector){
     int input;
@@ -64,7 +25,6 @@ void Menu(std::vector<Clothes> cVector){
     std::cout << "(4) Add a new clothing item" << std::endl;
 
     std::cin >> input; 
-
 
     switch (input){
         case 1:
@@ -144,7 +104,7 @@ void Menu(std::vector<Clothes> cVector){
 int main(){
     std::vector<Clothes> cVector; // creates vector of class "Clothes"
 
-    int current = readCSV("inventory.csv", cVector); // reads Inventory 
+    int current = RtoCSV("inventory.csv", cVector); // reads Inventory 
 
     Menu(cVector);
     return 0;
